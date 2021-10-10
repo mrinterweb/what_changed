@@ -1,4 +1,6 @@
-require "what_changed/version"
+# frozen_string_literal: true
+
+require 'what_changed/version'
 
 module WhatChanged
   class Error < StandardError; end
