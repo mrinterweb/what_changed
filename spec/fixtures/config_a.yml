@@ -1,0 +1,10 @@
+---
+features:
+  authentication:
+    files:
+      - 'app/models/user.rb'
+    directories:
+      - 'app/authentication_rules'
+ignored:
+  files: []
+  directories: []

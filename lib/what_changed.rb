@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'what_changed/rules'
 require 'what_changed/version'
 
 module WhatChanged
