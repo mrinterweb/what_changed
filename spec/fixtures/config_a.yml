@@ -1,10 +1,11 @@
 ---
+base_branch: main
 features:
   authentication:
     files:
-      - 'app/models/user.rb'
+      - app/models/user.rb
     directories:
-      - 'app/authentication_rules'
+      - app/authentication_rules
 ignored:
   files: []
   directories: []
