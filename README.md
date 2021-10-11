@@ -1,8 +1,31 @@
 # WhatChanged
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/what_changed`. To experiment with that code, run `bin/console` for an interactive prompt.
+Some projects require a lot of work to manually run a full regression test for each release. One way to reduce that burden is to run partial regression tests instead of full regression. The hard part is knowing which parts of the application should be tested in a release.
 
-TODO: Delete this and the text above, and describe your gem
+The goal of this is to provide tooling that can take the git diff of a release, and identify parts of the application that have changed. The way the association is made is to associate testable parts of the application with source code files.
+
+## Work in progress
+
+This is not at a usable proof of concept yet.
+
+## Approach and philosophy
+
+This is a tool that helps start a partial regression test plan.
+
+### Not perfect
+
+It is unlikely that WhatChanged will ever be perfect for associating files to testable sections of an application.
+Reasons:
+* There are some changes that may happen on a file that would not merrit testing.
+* Some files are associated with too many parts of an application.
+* The mappings may not be perfect or are incomplete.
+* Some files are associated with multiple features and it may not make sense to test all associated sections.
+
+Considering the limitations, this tools should probably be a starting place to inform a partial regression strategy for a release. It would be best for QA and or development to look at the results of this tool, and discuss if the results make sense. Did this tool miss something, or did it identify something that doesn't really need changing? Don't assume that this tool will generate a perfect partial regression test plan for every release. This tool is intended to be a starting place for a partial regression strategy.
+
+### Itterative implementation
+
+Usually, by the time a team(s) feels the need to switch from full regression testing for releases, the codebase is on the large side. Associating every file with a part of the application could be a daunting prospect. A goal of this project is to allow for itterative file association to be a natural part of development by introducing git hooks that will prompt to associate files with features as the files are changed, if the file is not already associated with a feature.
 
 ## Installation
 
